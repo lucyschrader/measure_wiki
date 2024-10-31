@@ -70,6 +70,7 @@ Install the following packages:
 * BeautifulSoup
 * PyYAML
 * tqdm
+* pywikibot
 
 Rename `src/config/renametoconfig.yaml` to `config.yaml`. Under `usernames`, list the usernames of your editors.
 

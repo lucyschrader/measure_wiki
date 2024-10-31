@@ -1,7 +1,6 @@
 import os
 import json
 import yaml
-import bcrypt
 from src.config.config import read_config
 import codecs
 import string
@@ -58,25 +57,6 @@ def match_username(username, o_username):
     o_username = o_username[10:-10]
     if codecs.encode(o_username, "rot_13") == username:
         return True
-
-
-def hash_username(username):
-    b_username = username.encode("utf-8")
-    user_salt = bcrypt.gensalt()
-    b_h_username = bcrypt.hashpw(b_username, user_salt)
-    h_username = b_h_username.decode("utf-8")
-
-    return h_username
-
-
-def match_user_hash(username, h_username):
-    if username and h_username:
-        b_username = username.encode("utf-8")
-        b_h_username = h_username.encode("utf-8")
-        if bcrypt.checkpw(b_username, b_h_username):
-            return True
-
-    return False
 
 
 def update_url_dump(filepath, data):
