@@ -41,7 +41,10 @@ def get_site(site_id, lang=None):
 def save_site_details(site_id, site_details):
 	site_project_label = site_id.split(":")[0]
 	this_site_details = site_details[site_project_label]
-	this_site_details["page_types"].update(site_details["crosswiki"]["page_types"])
+	if this_site_details.get("page_types"):
+		this_site_details["page_types"].update(site_details["crosswiki"]["page_types"])
+	else:
+		this_site_details["page_types"] = site_details["crosswiki"]["page_types"]
 	this_site_details["report_elements"].update(site_details["crosswiki"]["report_elements"])
 	sites[site_id].update(this_site_details)
 
