@@ -1,0 +1,279 @@
+---
+crosswiki:
+  page_types:
+    talk:
+      name: talk
+      label: Talk page
+      slugs:
+        - "Talk:"
+        - "Discusión:"
+    user:
+      name: user
+      label: User page
+      slugs:
+        - "User:"
+        - "Usario:"
+    user_talk:
+      name: user_talk
+      label: User talk page
+      slugs:
+        - "User_talk:"
+        - "Usuario_discusión:"
+    template:
+      name: template
+      label: Template
+      slugs:
+        - "Template:"
+        - "Plantilla:"
+    wikiproject:
+      name: wikiproject
+      label: WikiProject page
+      slugs:
+        - ":WikiProject"
+    category:
+      name: category
+      label: Category
+      slugs:
+        - "Category:"
+        - "Categoría:"
+  report_elements:
+    any_page_all_time:
+      name: any_page_all_time
+      label: "Pages (any type) edited on {s} all time"
+      report_type: count
+    core_page_all_time:
+      name: core_page_all_time
+      label: "{c} edited on {s} all time"
+      report_type: count
+    any_page_this_month:
+      name: any_page_this_month
+      label: "Pages (any type) edited on {s} this month"
+      report_type: count
+      for_user: true
+    core_page_this_month:
+      name: core_page_this_month
+      label: "{c} edited on {s} this month"
+      report_type: count
+      for_user: true
+    new_page_this_month:
+      name: new_page_this_month
+      label: "New pages (any type) added to {s}"
+      report_type: count
+      for_user: true
+    new_core_this_month:
+      name: new_core_this_month
+      label: "New {c} added to {s}"
+      report_type: count
+      for_user: true
+    any_edit_this_month:
+      name: any_edit_this_month
+      label: "All edits made on {s}"
+      report_type: count
+      for_user: true
+    core_edit_this_month:
+      name: core_edit_this_month
+      label: "{c} edits on {s}"
+      report_type: count
+      for_user: true
+    core_major_edit_this_month:
+      name: core_major_edit_this_month
+      label: "{c} major edits on {s}"
+      report_type: count
+      for_user: true
+    1lib1ref:
+      name: 1lib1ref
+      label: 1Lib1Ref campaign edits
+      report_type: classification
+      for_user: true
+      summary:
+        - 1lib1ref
+      tags: null
+    womeninred:
+      name: womeninred
+      label: Women in Red campaign edits
+      report_type: classification
+      for_total: true
+      summary:
+        - womeninred
+        - women in red
+      tags: null
+
+wikipedia:
+  platform_name: wikipedia
+  url_store: "editedarticles_{}.json"
+  core_type: article
+  page_types:
+    article:
+      name: article
+      label: Article
+      label_plural: Articles
+      slugs: null
+      role: core
+    orgproject:
+      name: orgproject
+      label: Organisation project page
+      slugs:
+        - "Wikipedia:GLAM/Museum_of_New_Zealand_Te_Papa_Tongarewa"
+    meetup:
+      name: meetup
+      label: Meetup page
+      slugs:
+        - "Wikipedia:Meetup"
+        - "Wikipedia:WikiCon"
+  report_elements:
+    traffic_all_time:
+      name: traffic_all_time
+      label: "Monthly traffic for all {s} articles edited"
+      report_type: count
+    traffic_month:
+      name: traffic_month
+      label: "Monthly traffic for {s} articles edited this month"
+      report_type: count
+      for_user: true
+    words_added:
+      name: words_added
+      label: Words added
+      report_type: diff
+      for_user: true
+    citations_added:
+      name: citations_added
+      label: Citations added
+      report_type: diff
+      for_user: true
+    images_added:
+      name: images_added
+      label: Images added
+      report_type: diff
+      for_user: true
+    infoboxes_added:
+      name: infoboxes_added
+      label: Infoboxes added
+      report_type: diff
+      for_user: true
+
+commons:
+  platform_name: commons
+  platform_label: Wikimedia Commons
+  url_store: "editedimages.json"
+  core_type: media
+  page_types:
+    media:
+      name: media
+      label: Media
+      label_plural: Media
+      slugs:
+        - "File:"
+      role: core
+  report_elements:
+    sdc_edits:
+      name: sdc_edits
+      label: Structured data claim added
+      report_type: classification
+      for_user: true
+      summary:
+        - wbsetclaim-create
+        - wbeditentity
+      tags: null
+    metadata_edits:
+      name: metadata_edits
+      label: Descriptive metadata edited
+      report_type: classification
+      for_user: true
+      summary:
+        - "{{int:filedesc}}"
+      tags: null
+    org_images_loaded:
+      name: org_images_loaded
+      label: Organisation images loaded to Commons
+      report_type: commons_count
+    org_images_used:
+      name: org_images_used
+      label: Organisation images used across Wiki
+      report_type: commons_count
+    pages_using_org_images:
+      name: pages_using_org_images
+      label: Pages using organisation images
+      report_type: commons_count
+    wikis_using_org_images:
+      name: wikis_using_org_images
+      label: Wikis using organisation images
+      report_type: commons_count
+    traffic_for_pages_using_org_images:
+      name: traffic_for_pages_using_org_images
+      label: Traffic for pages using organisation images
+      alt_label: "Traffic for {} pages using organisation images"
+      main_langs:
+        - en
+        - es
+      report_type: commons_count
+
+wikidata:
+  platform_name: wikidata
+  platform_label: Wikidata
+  url_store: "editeditems.json"
+  core_type: item
+  page_types:
+    item:
+      name: item
+      label: Item
+      label_plural: Items
+      slugs: null
+      role: core
+  report_elements:
+    new_claim:
+      name: new_claim
+      label: New claim created
+      report_type: classification
+      for_user: true
+      summary:
+        - wbsetclaim-create
+      tags: null
+    changed_claim:
+      name: changed_claim
+      label: Claim updated
+      report_type: classification
+      for_user: true
+      summary:
+        - wbsetclaim-update
+      tags: null
+    removed_claim:
+      name: removed_claim
+      label: Claim removed
+      report_type: classification
+      for_user: true
+      summary:
+        - wbremoveclaims-remove
+      tags: null
+    image_added:
+      name: image_added
+      label: Image added to item
+      report_type: classification
+      for_user: true
+      summary:
+        - "wbsetclaim-create:2||1 */ [[Property:P18]]"
+      tags: null
+    linked_to_full_work:
+      name: linked_to_full_work
+      label: Link added to full work
+      report_type: classification
+      for_user: true
+      summary:
+        - "wbsetclaim-create:2||1 */ [[Property:P953]]"
+      tags: null
+    linked_to_agent_id:
+      name: linked_to_agent_id
+      label: Link added to Collections Online
+      report_type: classification
+      for_user: true
+      summary:
+        - "wbsetclaim-create:2||1 */ [[Property:P3544]]"
+      tags: null
+    merged_items:
+      name: merged_items
+      label: Item merged
+      report_type: classification
+      for_user: true
+      summary:
+        - wbmergeitems
+      tags:
+        - "merge.js"

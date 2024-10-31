@@ -1,0 +1,30 @@
+---
+quiet: True
+use_saved_data: False
+request_traffic: True
+
+usernames:
+  - List
+  - Your
+  - Usernames
+
+year: 2024
+month: 9
+
+backdate: False
+backdate_year: 2022
+backdate_month: 7
+backdate_users: null
+
+languages:
+  - en
+  - es
+
+base_url: "https://wikimedia.org/api/rest_v1/metrics"
+commons_slug: "commons-analytics"
+
+headers:
+  User-Agent: Replace with your own user agent. See https://www.mediawiki.org/wiki/Manual:Pywikibot/User-agent
+
+main_category: Replace_with_category_name
+uploads_category: Replace_with_category_name

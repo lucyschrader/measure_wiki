@@ -1,0 +1,21 @@
+# venv and pycharm
+Lib/
+Scripts/
+.idea/
+.venv/
+pyvenv.cfg
+__pycache__/
+apicache/
+src/util/apicache/
+throttle.ctrl
+src/util/throttle.ctrl
+
+# Local config file
+src/config/config.yaml
+
+# Report output files
+output_dir/
+
+# Stored data
+src/resources/edited*
+memo.json

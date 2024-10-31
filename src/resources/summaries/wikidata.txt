@@ -1,0 +1,5 @@
+Editing Wikidata improves the data backbone of Wikipedia, and the many other sites and services that use it.
+
+Adding new items is often a first step towards creating an article, and fills a gap in the knowledge available. Editing an item to add new claims makes it richer and more connected with the rest of the knowledge web.
+
+Changing an item's claims or removing incorrect or unsourced ones are other great ways of making the whole system better.
