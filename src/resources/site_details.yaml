@@ -72,12 +72,12 @@ crosswiki:
       for_user: true
     core_edit_this_month:
       name: core_edit_this_month
-      label: "{c} edits on {s}"
+      label: "{c} edited on {s}"
       report_type: count
       for_user: true
     core_major_edit_this_month:
       name: core_major_edit_this_month
-      label: "{c} major edits on {s}"
+      label: "{c} with major edits on {s}"
       report_type: count
       for_user: true
     1lib1ref:
@@ -101,7 +101,11 @@ crosswiki:
 wikipedia:
   platform_name: wikipedia
   url_store: "editedarticles_{}.json"
-  core_type: article
+  core_type:
+    name: article
+    label: article
+    label_plural: articles
+    slugs: null
   page_types:
     article:
       name: article
@@ -155,15 +159,12 @@ commons:
   platform_name: commons
   platform_label: Wikimedia Commons
   url_store: "editedimages.json"
-  core_type: media
-  page_types:
-    media:
-      name: media
-      label: Media
-      label_plural: Media
-      slugs:
-        - "File:"
-      role: core
+  core_type:
+    name: media
+    label: media
+    label_plural: media
+    slugs:
+      - "File:"
   report_elements:
     sdc_edits:
       name: sdc_edits
@@ -211,14 +212,11 @@ wikidata:
   platform_name: wikidata
   platform_label: Wikidata
   url_store: "editeditems.json"
-  core_type: item
-  page_types:
-    item:
-      name: item
-      label: Item
-      label_plural: Items
-      slugs: null
-      role: core
+  core_type:
+    name: item
+    label: item
+    label_plural: items
+    slugs: null
   report_elements:
     new_claim:
       name: new_claim

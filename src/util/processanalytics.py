@@ -232,8 +232,7 @@ def identify_page_type(title, site_details):
             for slug in page_types[possible_type]["slugs"]:
                 if slug in title:
                     page_type = possible_type
-        else:
-             if page_types[possible_type].get("role") == "core":
-                page_type = possible_type
+    if not page_type:
+        page_type = site_details["core_type"]["name"]
 
     return page_type

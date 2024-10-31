@@ -45,6 +45,8 @@ Finally, it produces a csv with totals for the key stats across all your editors
 
 When you want to get contributions to other language Wikipedias, make sure you add the url slugs for them in this file. For example, you need both `User:` and `Usario:` for it to work on English and Spanish Wikipedias.
 
+The 'main' page type for each site sits under `core_type`, which is the default type if others don't apply, and is also the page type for which traffic is checked.
+
 ### Report elements
 What elements the scripts checks for is set in `src/resources/site_details.yaml`. The ones that with `report_type: count` and `commons_count` are hooked up to specific parts of the script, but new `classification` elements can be added pretty easily.
 

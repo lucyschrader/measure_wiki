@@ -66,7 +66,11 @@ def lookup_key_label(key, site_details):
 			if "{l}" in label:
 				label = label.replace("{l}", lang.upper())
 			if "{c}" in label:
-				label = label.replace("{c}", site_details["core_type"].capitalize())
+				sub_string = site_details["core_type"]["label_plural"]
+				if label.startswith("{c}"):
+					label = label.replace("{c}", sub_string.capitalize())
+				else:
+					label = label.replace("{c}", sub_string)
 			if "{s}" in label:
 				label = label.replace("{s}", site_details["platform_label"])
 			return label
@@ -201,7 +205,7 @@ def build_user_lists(site_details, username, full_list, core_list):
 
 
 def reduce_url_list(page_list, site_details):
-	core_type = site_details["core_type"]
+	core_type = site_details["core_type"]["name"]
 
 	reduced_list = {page_key: page_data for page_key, page_data in page_list.items() if
 	                    page_list[page_key]["page_type"] == core_type}
@@ -266,7 +270,8 @@ def get_monthly_traffic(pages, site_details):
 	for page_key in tqdm(pages, desc="Getting traffic for {}".format(domain)):
 		title = pages[page_key]["title"]
 		page_type = pages[page_key]["page_type"]
-		if page_type == site_details["core_type"]:
+		core_type = site_details["core_type"]["name"]
+		if page_type == core_type:
 			views = get_page_traffic(title, url_slugs, first, last)
 			if page_key in memo.pages.keys():
 				memo.pages[page_key]["traffic"] = views
@@ -330,7 +335,7 @@ def count_edits(site_details, core=False, username=None):
 	# Check for total edit counts
 	edits = get_site_edits(site_details, username)
 	if core:
-		edits = [edit for edit in edits if memo.pages[edit["page_key"]]["page_type"] == site_details["core_type"]]
+		edits = [edit for edit in edits if memo.pages[edit["page_key"]]["page_type"] == site_details["core_type"]["name"]]
 
 	return len(edits)
 
