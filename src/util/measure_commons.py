@@ -5,7 +5,10 @@ from src.util.datestamps import span_month
 
 def commons_data_check():
 	if not request_commons_snapshot():
-		exit("Commons data not available yet")
+		if read_config("require_commons"):
+			exit("Commons data not available yet")
+		else:
+			print("Commons data not available yet")
 
 
 def request_commons_snapshot(category=None):

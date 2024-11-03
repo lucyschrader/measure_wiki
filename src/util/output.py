@@ -245,8 +245,11 @@ def run_commons_counts(site_details, username=None):
 	if username:
 		counts = {}
 	else:
-		counts = get_category_details(category)
-		counts.update(get_totals_by_wiki(category, main_langs))
+		if read_config("require_commons"):
+			counts = get_category_details(category)
+			counts.update(get_totals_by_wiki(category, main_langs))
+		else:
+			counts = {}
 	counts.update(summarise_classified_edits(site_details, username=username))
 
 	return counts

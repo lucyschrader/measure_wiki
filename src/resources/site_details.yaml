@@ -72,12 +72,12 @@ crosswiki:
       for_user: true
     core_edit_this_month:
       name: core_edit_this_month
-      label: "{c} edited on {s}"
+      label: "Edits to {c} on {s}"
       report_type: count
       for_user: true
     core_major_edit_this_month:
       name: core_major_edit_this_month
-      label: "{c} with major edits on {s}"
+      label: "Major edits to {c} on {s}"
       report_type: count
       for_user: true
     1lib1ref:
@@ -92,7 +92,7 @@ crosswiki:
       name: womeninred
       label: Women in Red campaign edits
       report_type: classification
-      for_total: true
+      for_user: true
       summary:
         - womeninred
         - women in red
